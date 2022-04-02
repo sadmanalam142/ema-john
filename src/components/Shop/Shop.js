@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useCart from '../../customHooks/CartDetail/CartDetail';
 import useProducts from '../../customHooks/ProductsDetail/ProductsDetail';
-import { addToDb, getStoredCart } from '../../utilities/fakedb';
+import { addToDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css'
@@ -41,7 +40,7 @@ const Shop = () => {
             <div className="item-cart">
                 <Cart cart={cart}>
                     <Link to='/orders'>
-                        <button>Review Order</button>
+                        {cart.length >= 2 && <button>Review Order</button>}
                     </Link>
                 </Cart>
             </div>
