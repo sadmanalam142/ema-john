@@ -16,3 +16,8 @@
 nav a:hover {
     color: orange;
 }
+
+.sign-out-btn {
+    position: relative;
+    left: 20px;
+}
